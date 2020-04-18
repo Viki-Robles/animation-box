@@ -15,18 +15,21 @@ import Footer from "./Footer/Footer";
 //button to toggle all on/off
 
 class App extends Component {
-  state = { todos: [] };
 
-  addItems = props => {
-    const newTodos = [props,...this.state.todos];
-    this.setState({ todos: newTodos });
-  };
+  state={
+    todos:[]
+  }
 
+  addItems=(props)=>{
+    const newTodos = [props,...this.state.todos]
+    this.setState({todos:newTodos})
+  }
   render() {
     return (
       <div className="App">
         <h1>todos</h1>
-        <Todos onSubmit={this.addItems}/>
+       <Todos onSubmit={this.addItems}/>
+       {JSON.stringify(this.state.todos)}
         <Footer />
       </div>
     );
