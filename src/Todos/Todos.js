@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./Todos.css";
-import shortid from 'shortid';
+import shortid from "shortid";
 
 export default class Todos extends Component {
   constructor(props) {
@@ -21,9 +21,11 @@ export default class Todos extends Component {
     event.preventDefault();
     this.props.onSubmit({
       items: this.state.items,
-      complete:false,
-      id:shortid.generate()
+      complete: false,
+      id: shortid.generate()
     });
+
+    this.setState({ items: "" });
   };
 
   render() {
@@ -38,7 +40,7 @@ export default class Todos extends Component {
             value={this.state.items}
           ></input>
         </form>
-        <button type="submit">Add</button>
+        <button onClick={this.handleSubmit}>Add</button>
       </>
     );
   }
