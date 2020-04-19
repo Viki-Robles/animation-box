@@ -19,18 +19,16 @@ class App extends Component {
     todos: []
   };
 
-  addItems = props => {
-    const newTodos = [props, ...this.state.todos];
-    this.setState({ todos: newTodos });
+  addItems = todo => {
+    this.setState({ todos: [todo, ...this.state.todos] });
   };
+
   render() {
     return (
       <div className="App">
         <h1>todos</h1>
-        <Todos onSubmit={this.addItems} />
-        {this.state.todos.map(todo => (
-          <div key={todo.id}>{todo.text}</div>
-        ))}
+        <Todos onSubmit={this.addItems}/>
+        {this.state.todos.map(todo=><div key={todo.id}>{todo.text}</div>)}
         <Footer />
       </div>
     );

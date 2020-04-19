@@ -5,10 +5,10 @@ import shortid from "shortid";
 export default class Todos extends Component {
   constructor(props) {
     super(props);
-    this.state = { items: "" };
+    this.state = {
+      text: ""
+    };
   }
-
-  //1. HanldeChange function
 
   handleChange = event => {
     this.setState({
@@ -16,32 +16,34 @@ export default class Todos extends Component {
     });
   };
 
-  //2.
-  handleSubmit = event => {
+  handleSubmnit = event => {
     event.preventDefault();
+    //in order to submit the form we need to
+    //be able to create a new Todo
+    //and pass it to the todo list on the App.js
     this.props.onSubmit({
-      items: this.state.items,
-      complete: false,
-      id: shortid.generate()
-    });
-
-    this.setState({ items: "" });
+        id:shortid.generate(),
+        text: this.state.text,
+        complete:false,
+    });//this onSubmit is the addItem from the APP.js
+    this.setState({text:""})
   };
 
   render() {
     return (
-      <>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            name="items"
-            type="text"
-            placeholder="What needs to be done?"
-            onChange={this.handleChange}
-            value={this.state.items}
-          ></input>
-        </form>
-        <button onClick={this.handleSubmit}>Add</button>
-      </>
+        <>
+      <form onSubmit={this.handleSubmnit}>
+        <input
+          name="text"
+          type="text"
+          placeholder="What needs to be done"
+          value={this.state.text}
+          onChange={this.handleChange}
+        />
+        <button onClick={this.handleSubmnit}>Add</button>
+
+      </form>
+</>
     );
   }
 }
