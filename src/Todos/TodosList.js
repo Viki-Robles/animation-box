@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import "./Todos.css";
+import "./TodosList.css";
 import shortid from "shortid";
 
-export default class Todos extends Component {
+export default class TodosList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +12,7 @@ export default class Todos extends Component {
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      text: event.target.value
     });
   };
 
@@ -40,9 +40,9 @@ export default class Todos extends Component {
           value={this.state.text}
           onChange={this.handleChange}
         />
-        <button onClick={this.handleSubmnit}>Add</button>
-
       </form>
+      <button onClick={this.handleSubmnit}>Add</button>
+
 </>
     );
   }

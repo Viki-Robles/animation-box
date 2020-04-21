@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import Todos from "./Todos/Todos";
+import TodosList from "./Todos/TodosList";
 import Footer from "./Footer/Footer";
 
 // STEPS FOR TODO
@@ -22,13 +22,18 @@ class App extends Component {
   addItems = todo => {
     this.setState({ todos: [todo, ...this.state.todos] });
   };
-
+  
+removeItems=()=>{
+  this.setState({todos:[]})
+}
   render() {
     return (
       <div className="App">
         <h1>todos</h1>
-        <Todos onSubmit={this.addItems}/>
+        <TodosList onSubmit={this.addItems}
+        />
         {this.state.todos.map(todo=><div key={todo.id}>{todo.text}</div>)}
+       
         <Footer />
       </div>
     );
