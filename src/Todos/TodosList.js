@@ -37,8 +37,8 @@ export default class TodosList extends Component {
             onChange={this.changeHandler}
             value={this.state.text}
           />
-          <button onClick={this.submitHandler}>Add</button>
         </form>
+        <button onClick={this.submitHandler}>Add</button>
       </>
     );
   }
