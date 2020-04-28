@@ -10,31 +10,35 @@ export default class TodosList extends Component {
 
   changeHandler = event => {
     this.setState({
-      text : event.target.value
-    }, console.log("hello"));
-  }
+      text: event.target.value
+    });
+  };
 
-  submitHandler = (event) => {
+  submitHandler = event => {
     event.preventDefault();
     this.props.onSubmit({
-      id : shortid.generate(),
+      id: shortid.generate(),
       text: this.state.text,
       complete: false
-    })
-  }
-  
+    });
+    this.setState({
+      text: ""
+    });
+  };
+
   render() {
     return (
       <>
         <form onSubmit={this.submitHandler}>
-          <input 
-          name="text"
-          type="text" 
-          placeholder="What should I buy?" 
-          onChange={this.changeHandler}
-          value={this.state.text}/>
+          <input
+            name="text"
+            type="text"
+            placeholder="What should I buy?"
+            onChange={this.changeHandler}
+            value={this.state.text}
+          />
+          <button onClick={this.submitHandler}>Add</button>
         </form>
-        <button>Add</button>
       </>
     );
   }
