@@ -19,21 +19,18 @@ class App extends Component {
     todos: []
   };
 
-  addItems = todo => {
-    this.setState({ todos: [todo, ...this.state.todos] });
-  };
-  
-removeItems=()=>{
-  this.setState({todos:[]})
-}
+  addTodos = (todo) => {
+    const newTodos = [todo, ...this.state.todos]
+    this.setState({
+      todos: newTodos
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <h1>todos</h1>
-        <TodosList onSubmit={this.addItems}
-        />
-        {this.state.todos.map(todo=><div key={todo.id}>{todo.text}</div>)}
-       
+        <TodosList onSubmit={this.addTodos}/>
         <Footer />
       </div>
     );

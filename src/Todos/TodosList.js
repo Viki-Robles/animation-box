@@ -5,45 +5,37 @@ import shortid from "shortid";
 export default class TodosList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      text: ""
-    };
+    this.state = { text: "" };
   }
 
-  handleChange = event => {
+  changeHandler = event => {
     this.setState({
-      text: event.target.value
-    });
-  };
+      text : event.target.value
+    }, console.log("hello"));
+  }
 
-  handleSubmnit = event => {
+  submitHandler = (event) => {
     event.preventDefault();
-    //in order to submit the form we need to
-    //be able to create a new Todo
-    //and pass it to the todo list on the App.js
     this.props.onSubmit({
-        id:shortid.generate(),
-        text: this.state.text,
-        complete:false,
-    });//this onSubmit is the addItem from the APP.js
-    this.setState({text:""})
-  };
-
+      id : shortid.generate(),
+      text: this.state.text,
+      complete: false
+    })
+  }
+  
   render() {
     return (
-        <>
-      <form onSubmit={this.handleSubmnit}>
-        <input
+      <>
+        <form onSubmit={this.submitHandler}>
+          <input 
           name="text"
-          type="text"
-          placeholder="What needs to be done"
-          value={this.state.text}
-          onChange={this.handleChange}
-        />
-      </form>
-      <button onClick={this.handleSubmnit}>Add</button>
-
-</>
+          type="text" 
+          placeholder="What should I buy?" 
+          onChange={this.changeHandler}
+          value={this.state.text}/>
+        </form>
+        <button>Add</button>
+      </>
     );
   }
 }
