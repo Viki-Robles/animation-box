@@ -1,0 +1,53 @@
+.App {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  .img1 {
+    animation: animate 3s infinite;
+    animation-direction: 8s;
+    animation-delay: 3s;
+  
+  }
+
+  img {
+      width: 5%;
+  }
+  
+  .img2 {
+    animation: img2 3s infinite;
+    animation-delay: 3s;
+  }
+  
+  .img3 {
+    animation-delay: 5s;
+    animation: img3 3s infinite;
+  }
+  
+  .icons {
+    margin: 0 auto;
+  }
+  .square {
+    width: 150px;
+    height: 150px;
+    background: black;
+    margin: 0 auto;
+    margin-top: 35%;
+  }
+  @keyframes animate {
+    0% {
+      transform: translate(300%, -150%) rotate(65deg);
+    }
+    100% {
+      transform: translate(1000%, 850%) rotate(200deg);
+    }
+  }
+  
+  @keyframes img2 {
+    0% {
+      transform: translate(500%, -200%) rotate(65deg);
+    }
+    100% {
+      transform: translate(900%, 850%) rotate(100deg);
+    }
+  }

@@ -4,6 +4,8 @@ import Carousel from "react-elastic-carousel";
 import Item from "./Item";
 import "./styles.css";
 import './Swiper.css';
+import DragScrollProvider from 'drag-scroll-provider';
+
 
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
@@ -19,7 +21,7 @@ export default function SwiperSlides() {
             <h1 style={{ textAlign: "center" }}>Our Customers</h1>
             <div className="App">
                 <Carousel breakPoints={breakPoints}>
-                    <Item>
+                    <Item className='swiper-cards'>
                         <div>
                             <h4>
                                 We have seen amazing results already. It really saves me time and effort.

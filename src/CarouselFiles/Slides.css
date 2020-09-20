@@ -1,0 +1,20 @@
+.slider {
+    margin-top: 20%;
+}
+
+.slider-item {
+    border: 2px solid orange;
+}
+
+img {
+    width: 100%;
+}
+div {
+    margin:5px;
+}
+
+.slider-item-box {
+    border-radius: 10px;
+    border: 2px solid orange;
+    box-shadow: 6px 4px 15px -3px #000000;
+}
