@@ -11,43 +11,54 @@
   }
 
   img {
-      width: 5%;
+      width: 4.8%;
   }
   
   .img2 {
     animation: img2 3s infinite;
-    animation-delay: 3s;
+    animation-delay: 4s;
   }
   
   .img3 {
-    animation-delay: 5s;
-    animation: img3 3s infinite;
+    animation: img3 5s infinite;
+    animation-delay: 2s;
   }
   
   .icons {
     margin: 0 auto;
   }
   .square {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background: black;
     margin: 0 auto;
-    margin-top: 35%;
+    margin-top: 36%;
   }
   @keyframes animate {
     0% {
       transform: translate(300%, -150%) rotate(65deg);
     }
     100% {
-      transform: translate(1000%, 850%) rotate(200deg);
+      transform: translate(1000%, 850%) rotate(360deg);
     }
   }
   
   @keyframes img2 {
     0% {
-      transform: translate(500%, -200%) rotate(65deg);
+      transform: translate(200%, -100%) rotate(65deg);
     }
     100% {
-      transform: translate(900%, 850%) rotate(100deg);
+      transform: translate(900%, 850%) rotate(360deg);
+    }
+  }
+
+  @keyframes img3 {
+    0% {
+        transform: translate(1600%, -1000%);
+    }
+
+    100% {
+      transform: translate(800%, 900%) rotate(360deg);
+
     }
   }
